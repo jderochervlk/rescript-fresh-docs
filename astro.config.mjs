@@ -20,6 +20,7 @@ export default defineConfig({
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: 'Getting Started', slug: 'guides/getting_started' },
+						{ label: 'Intro to ReScript', slug: 'guides/intro_to_rescript' },
 					],
 				},
 				{
