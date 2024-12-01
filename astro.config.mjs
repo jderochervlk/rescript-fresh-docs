@@ -5,13 +5,15 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'ReScript Fresh',
+			favicon: 'public/favicon.ico',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/jderochervlk/rescript-fresh',
+				blueSky: 'https://bsky.app/profile/vlkpack.com'
 			},
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Tutorial',
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: 'Example Guide', slug: 'guides/example' },

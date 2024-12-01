@@ -1,36 +1,47 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: ReScript Fresh
+description: Documentation on how to use ReScript and Deno's Fresh.
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Build and deploy a website using Deno's Fresh, ReScript, and Deno deploy. You don't need to understand any of these tools in order to get started!
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/rescript-logo.png
   actions:
-    - text: Example Guide
+    - text: Tutorial
       link: /guides/example/
       icon: right-arrow
-    - text: Read the Starlight docs
+    - text: API docs
       link: https://starlight.astro.build
       icon: external
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+By combining the fast compiler and strong type safety of ReScript, the speed and ease of Deno, a simple framework like Fresh, and an easy to use deployment option with Deno you can build fast websites without runtime errors and easy refactoring.
 
-## Next steps
+Follow along with the tutorial if you are new to ReScript, Deno, or Fresh. If you just want to look things up you can head to the API docs.
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
-</CardGrid>
+```tsx
+@jsx.component
+let make = (~count: Signal.t<'int>) => {
+  <div class="flex gap-8 py-6">
+    <Button onClick={_ => count.value = count.value - 1}> {"-1"->Preact.string} </Button>
+    <p class="text-3xl tabular-nums"> {count.value->Int.toString->Preact.string} </p>
+    <Button onClick={_ => count.value = count.value + 1}> {"+1"->Preact.string} </Button>
+  </div>
+}
+```
+
+## What is ReScript?
+[ReScript](https://rescript-lang.org/) is a robustly typed language that compiles to efficient and human-readable JavaScript. 
+It comes with a lightning fast compiler toolchain that scales to any codebase size.
+
+It's kinda like TypeScript, but instead of being a superset of JavaScript with types layered on top with hard to navigate `any` types,
+it's a different language with a JavaScript like syntax built on a foundation of strong types and modern language features like pattern matching,
+pipes, typed errors, no nulls or undefined values, and variant types.
+
+## What is Deno?
+[Deno](https://deno.com/) is like a sequel to Node. It's a fast and modern runtime for JavaScript. It also has an easy to use hosting platform that's free to get started with no credit card required.
+
+## What is Fresh?
+[Fresh](https://fresh.deno.dev/) is a "simple, approachable, productive web framework". It's based on web standards you already know and [Preact](https://preactjs.com/),
+which is like React but lightweight and more performant. It's also ESM, which fits right in with the rest of our stack! Fresh can use SSR, server functions, and an island based architecture to help you easily create wicked fast websites.
