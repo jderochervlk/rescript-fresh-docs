@@ -11,6 +11,9 @@ export default defineConfig({
 				github: 'https://github.com/jderochervlk/rescript-fresh',
 				blueSky: 'https://bsky.app/profile/vlkpack.com'
 			},
+			customCss: [
+				'./src/styles/custom.css',
+			],
 			sidebar: [
 				{
 					label: 'Tutorial',
